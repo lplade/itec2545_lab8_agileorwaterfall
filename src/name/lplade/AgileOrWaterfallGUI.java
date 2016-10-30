@@ -171,15 +171,15 @@ public class AgileOrWaterfallGUI extends JFrame {
                 Boolean aOrW;
                 String recommendation;
                 if (programmers < 1 || deadlines == null|| analysisExperience == null || qualityControl == null || earlyIntegration == null || workingModels == null){
-                    recommendation = "PLEASE SET ALL OPTIONS";
+                    recommendation = "<html><span>PLEASE SET ALL OPTIONS</span></html>";
                     recommendationLabel.setText(recommendation);
                     //TODO graceful UI error display
                 } else {
                     aOrW = agileOrWaterfall(programmers, deadlines, analysisExperience, qualityControl, earlyIntegration, workingModels);
                     if (aOrW){
-                        recommendation = "Agile methodology might be a good fit for " + projectName;
+                        recommendation = "<html><span>Agile methodology might be a good fit for " + projectName + "</span></html>";
                     } else {
-                        recommendation = "You should probably stick to waterfall for " + projectName;
+                        recommendation = "<html><span>You should probably stick to waterfall for " + projectName + "</span></html>";
                     }
                     recommendationLabel.setText(recommendation);
                 }
